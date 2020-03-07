@@ -30,6 +30,7 @@ import SignUp from './src/components/SignUp/SignUp';
 import Start from './src/components/Start/Start';
 import CreateGroup from './src/components/CreateGroup/CreateGroup';
 import LeaderBoard from './src/components/LeaderBoard/LeaderBoard';
+import Profile from './src/components/Profile/Profile';
 
 
 const Stack = createStackNavigator();
@@ -44,6 +45,7 @@ const App: () => React$Node = () => {
         <Stack.Screen name="Start" component={Start} />
         <Stack.Screen name="CreateGroup" component={CreateGroup} />
         <Stack.Screen name="LeaderBoard" component={LeaderBoard} />
+        <Stack.Screen name="Profile" component={Profile} />
       </Stack.Navigator>
       </NavigationContainer>
       {/* <StatusBar barStyle="dark-content" />
