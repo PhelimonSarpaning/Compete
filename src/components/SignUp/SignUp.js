@@ -9,9 +9,13 @@ class SignUp extends Component {
     super(props);
     state = {
       username:'',
-      password:'',
+      bodyFat:'',
       email:'',
+      bodyMass:'',
+      height:'',
       phoneNumber:'',
+      weight:'',
+      age:'',
       signUpCheck: true,
     }
   }
@@ -22,25 +26,51 @@ class SignUp extends Component {
           style={styles.body}>
             <View>
             <View>
-           <Text><Text style={styles.signin}>Sign Up{"\n\n"}</Text>
+           <Text><Text style={styles.signin}>Create Profile{"\n\n"}</Text>
           <Text> Welcome to <Text style={styles.textType}>GoalCompete</Text></Text>
           </Text>
           </View>
           <View style={styles.inputContainer}>
               <TextInput
               style={styles.inputs}
-              placeholder="Username"
+              placeholder="Name"
               textContentType="name"
               onChangeText={(username) => this.setState({username})}
              />
           </View>
           <View style={styles.inputContainer}>
+              <TextInput
+              style={styles.inputs}
+              placeholder="Age"
+              textContentType="telephoneNumber"
+              onChangeText={(age) => this.setState({age})}
+             />
+          </View>
+          <View style={styles.inputContainer}>
               <TextInput 
               style={styles.inputs}
-              placeholder="Email"
-              onChangeText={(email) => this.setState({email})}
-              keyboardType="email-address"
-              textContentType="emailAddress"
+              placeholder="Body Mass"
+              onChangeText={(bodyMass) => this.setState({bodyMass})}
+            //   keyboardType="email-address"
+              textContentType="oneTimeCode"
+             />
+          </View>
+          <View style={styles.inputContainer}>
+              <TextInput 
+              style={styles.inputs}
+              placeholder="Height(inches)"
+              onChangeText={(height) => this.setState({height})}
+            //   keyboardType="email-address"
+              textContentType="newPassword"
+             />
+          </View>
+          <View style={styles.inputContainer}>
+              <TextInput 
+              style={styles.inputs}
+              placeholder="Weight"
+              onChangeText={(weight) => this.setState({weight})}
+            //   keyboardType="email-address"
+              textContentType="newPassword"
              />
           </View>
           {/* <View style={styles.inputContainer}>
@@ -55,15 +85,15 @@ class SignUp extends Component {
           <View style={styles.inputContainer}>
               <TextInput 
               style={styles.inputs}
-              placeholder="Password"
-              secureTextEntry={true}
-              textContentType="newPassword"
-              onChangeText={(password) => this.setState({password})}
+              placeholder="Body Fat%"
+              //secureTextEntry={true}
+              textContentType="oneTimeCode"
+              onChangeText={(bodyFat) => this.setState({bodyFat})}
              />
           </View>
 
           <View style={styles.button} >
-          <TouchableHighlight style={styles.buttonContainer} onPress={() => this.props.navigation.navigate('Start')} >
+          <TouchableHighlight style={styles.buttonContainer} onPress={() => this.props.navigation.navigate('CreateGroup')} >
           <Text >Signup</Text>
         </TouchableHighlight>
         </View>
@@ -74,9 +104,9 @@ class SignUp extends Component {
           onPress={() => Alert.alert('Simple Button pressed')}
         />
         </View> */}
-            </View>
+            {/* </View>
             <View style={styles.icons}>
-            <View>
+            <View> */}
           {/* <Icon
           iconStyle={styles.imgStyle}
           color={ state.signInCheck ? "#00b5ec" : "black"}
@@ -84,8 +114,8 @@ class SignUp extends Component {
           name='login'
           onPress={() => this.props.navigation.navigate('SignIn')}
         /> */}
-        <Text style={{color:'blue'}} onPress={() => this.props.navigation.navigate('SignIn')}>Sign In</Text>
-          </View>
+        {/* <Text style={{color:'blue'}} onPress={() => this.props.navigation.navigate('SignIn')}>Sign In</Text>
+          </View> */}
 
           <View style={{color:'red'}}>
           {/* <Icon
@@ -95,7 +125,7 @@ class SignUp extends Component {
           iconStyle={[{color:'red'},styles.imgStyle]}
           //source={signup}
         /> */}
-        <Text style={{color:"#00b5ec"}} onPress={() => this.props.navigation.navigate('SignUp')}>Sign Up</Text>
+        <Text style={{color:"#00b5ec"}} onPress={() => this.props.navigation.goBack()}>Back</Text>
           </View>
             </View>
         </View>

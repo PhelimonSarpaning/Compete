@@ -115,6 +115,9 @@ class SignUp extends Component {
         {/* <Text style={{color:"#00b5ec"}} onPress={() => this.props.navigation.navigate('SignUp')}>Sign Up</Text>
           </View>
             </View> */}
+            <View>
+            <Text style={{color:"#00b5ec"}} onPress={() => this.props.navigation.goBack()}>Back</Text>
+            </View>
         </View>
       );
     }

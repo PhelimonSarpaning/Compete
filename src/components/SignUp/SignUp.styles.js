@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
         justifyContent:'center',
     },
     body:{
-        marginTop:1000 - deviceHeight,
+        marginTop:1025 - deviceHeight,
         justifyContent:'center',
         padding:20,
         alignContent:'center',

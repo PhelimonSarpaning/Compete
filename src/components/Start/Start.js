@@ -38,7 +38,7 @@ class Start extends Component{
                iconSize={40}
                text={"Create Group"}
                textColor={"white"}
-               onPress={() => this.props.navigation.navigate('CreateGroup')}
+               onPress={() => this.props.navigation.navigate('SignUp')}
                gradientColors={["#e65c00", "#f9d423"]}
             
                />

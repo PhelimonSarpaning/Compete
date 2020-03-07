@@ -11,10 +11,10 @@ class LeaderBoard extends Component{
         super(props);
         state = {
           data: [
-              {id:1, userName:"Thierry", highScore:145},
-              {id:2, userName:"Phil", highScore:155},
-              {id:3, userName:"Gabrielle", highScore:149},
-              {id:4, userName:"Galle", highScore:179}
+              {id:1, userName:"Thierry Sam", highScore:145, weight:201, height:"5.3", age:"23", bodyPer:"80%", bodyMass:"50", skeletalMass:"70%"},
+              {id:2, userName:"Phil", highScore:155, weight:201, height:"5.3", age:"23", bodyPer:"80%", bodyMass:"50", skeletalMass:"70%"},
+              {id:3, userName:"Gabrielle", highScore:149, weight:201, height:"5.3", age:"23", bodyPer:"80%", bodyMass:"50", skeletalMass:"70%"},
+              {id:4, userName:"Galle", highScore:179, weight:201, height:"5.3", age:"23", bodyPer:"80%", bodyMass:"50", skeletalMass:"70%"}
           ]
         }
       }
@@ -36,7 +36,7 @@ class LeaderBoard extends Component{
           const cardList = state.data.map(cardInf => (
            
            <Card >    
-            <ListItem avatar onPress={(data) => this.props.navigation.navigate('Profile')}>
+            <ListItem avatar onPress={() => this.props.navigation.navigate('Profile', cardInf)}>
               <Left>
                 <Thumbnail source={{ uri: 'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?f=y' }} />
               </Left>
@@ -62,7 +62,11 @@ class LeaderBoard extends Component{
         <Content>
           {cardList}
         </Content>
+        <View>
+      <Text style={{color:"#00b5ec"}} onPress={() => this.props.navigation.goBack()}>Back</Text>
+      </View>
       </Container>
+      
           );
       }
       

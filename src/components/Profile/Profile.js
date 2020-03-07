@@ -7,34 +7,52 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-export default class Profile extends Component {
-    constructor(props){
-        super(props);
-    }
+export default function Profile({route, navigation})  {
+    // constructor(props){
+    //     super(props);
+    
+    // }
 
-    render() {
+    // render() {
+        const { userName } = route.params;
+        const { weight } = route.params;
+        const { height } = route.params;
+        const {age} = route.params;
+        const {bodyPer} = route.params;
+        const {bodyMass} = route.params;
+        const {skeletalMass} = route.params;
+        //const text = JSON.stringify(userName);
       return (
         <View style={styles.container}>
-            <View style={styles.header}></View>
-            <Image style={styles.avatar} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
-            <View style={styles.body}>
-              <View style={styles.bodyContent}>
-                <Text style={styles.name}>John Doe</Text>
-                <Text style={styles.info}>UX Designer / Mobile developer</Text>
-                <Text style={styles.description}>Lorem ipsum dolor sit amet, saepe sapientem eu nam. Qui ne assum electram expetendis, omittam deseruisse consequuntur ius an,</Text>
-                
-                <TouchableOpacity style={styles.buttonContainer}>
-                  <Text>{this.props.userName}</Text>  
-                </TouchableOpacity>              
-                <TouchableOpacity style={styles.buttonContainer}>
-                  <Text>Opcion 2</Text> 
-                </TouchableOpacity>
-              </View>
-          </View>
+           <View style={styles.header}></View>
+           <Image style={styles.avatar} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
+            {/* // <View style={styles.body}>
+            //   <View style={styles.bodyContent}> */}
+            <View style={styles.name}>
+                <Text style={styles.name}>{userName}</Text>
+                <Text style={styles.info}>Weight : {weight}</Text>
+                <Text style={styles.info}>Height : {height}</Text>
+                <Text style={styles.info}>Age : {age}</Text>
+                <Text style={styles.info}>Body% : {bodyPer}</Text>
+                <Text style={styles.info}>Body Mass : {bodyMass}</Text>
+                <Text style={styles.info}>Skeletal Mass : {skeletalMass}</Text>
+                {/* <Text style={styles.description}>Lorem ipsum dolor sit amet, saepe sapientem eu nam. Qui ne assum electram expetendis, omittam deseruisse consequuntur ius an,</Text> */}
+                </View>
+                {/* <TouchableOpacity style={styles.buttonContainer}>
+                //   <Text>{userName}</Text>  
+                //   {console.debug("the text is" + userName)}
+                // </TouchableOpacity>              
+                // <TouchableOpacity style={styles.buttonContainer}>
+                //   <Text>Opcion 2</Text> 
+                // </TouchableOpacity> */}
+        {/* //       </View>
+        //   </View> */}
+        <View>
+            <Text style={{color:"#00b5ec"}} onPress={() => navigation.goBack()}>Back</Text>
+            </View>
         </View>
       );
     }
-  }
   
   const styles = StyleSheet.create({
     header:{
@@ -52,11 +70,13 @@ export default class Profile extends Component {
       position: 'absolute',
       marginTop:130
     },
-    name:{
-      fontSize:22,
-      color:"#FFFFFF",
-      fontWeight:'600',
-    },
+    // name:{
+    //   fontSize:272,
+    //   color:"black",
+    //   fontWeight:'600',
+    //   marginTop:500,
+    //   alignSelf:"center"
+    // },
     body:{
       marginTop:40,
     },
@@ -64,13 +84,17 @@ export default class Profile extends Component {
       flex: 1,
       alignItems: 'center',
       padding:30,
+      
     },
     name:{
       fontSize:28,
       color: "#696969",
-      fontWeight: "600"
+      fontWeight: "600",
+      alignSelf:"center",
+      marginTop:40
     },
     info:{
+     alignSelf:"center",
       fontSize:16,
       color: "#00BFFF",
       marginTop:10

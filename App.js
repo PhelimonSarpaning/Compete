@@ -39,7 +39,7 @@ const App: () => React$Node = () => {
   return (
     <>
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Sign In" screenOptions={{headerShown:false}}>
+      <Stack.Navigator initialRouteName="Start" screenOptions={{headerShown:false}}>
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="Start" component={Start} />
